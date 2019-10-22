@@ -30,7 +30,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             //String[] authorities = user.getAuthorities()
             //        .stream().map(a -> a.getAuthority()).toArray(String[]::new);
             //SimpleGrantedAuthority
-            builder.roles("READER", "ADMIN");
+            builder.roles(user.getRole().getRoleType().name());
             //builder.authorities(authorities);
         } else {
             throw new UsernameNotFoundException("User not found.");

@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="page">
-    <sec:authorize access="hasRole('ADMIN')">
+    <sec:authorize access="hasRole('ADMIN') and isAuthenticated()">
         <div class="context header">
             <c:import url="admin/header.jsp" charEncoding="utf-8"/>
         </div>
@@ -37,7 +37,7 @@
             </div>
         </div>
     </sec:authorize>
-    <sec:authorize access="hasRole('READER')">
+    <sec:authorize access="hasRole('READER') and isAuthenticated()">
         <div class="context header">
             <c:import url="reader/header.jsp" charEncoding="utf-8"/>
         </div>
@@ -83,48 +83,6 @@
             </div>
         </div>
     </sec:authorize>
-
-
-    <%--    <c:set var="userAuthorization" value="${not empty sessionScope.user and not empty sessionScope.userType}" scope="request"/>--%>
-    <%--    <div class="context header">--%>
-    <%--        <c:choose>--%>
-    <%--            <c:when test="${userAuthorization and sessionScope.userType eq \"ADMIN\"}">--%>
-    <%--                <c:import url="/WEB-INF/jsp/admin/header.jsp" charEncoding="utf-8"/>--%>
-    <%--            </c:when>--%>
-    <%--            <c:when test="${userAuthorization and sessionScope.userType eq \"READER\"}">--%>
-    <%--                <c:import url="/WEB-INF/jsp/admin/header.jsp" charEncoding="utf-8"/>--%>
-    <%--            </c:when>--%>
-    <%--            <c:otherwise>--%>
-    <%--                <c:import url="/WEB-INF/jsp/guest/header.jsp" charEncoding="utf-8"/>--%>
-    <%--            </c:otherwise>--%>
-    <%--        </c:choose>--%>
-    <%--    </div>--%>
-    <%--    <div class="context middle">--%>
-    <%--        <!--menu left-->--%>
-    <%--        <div class="middle-menu">--%>
-    <%--            <c:choose>--%>
-    <%--                <c:when test="${userAuthorization and sessionScope.userType eq \"ADMIN\"}">--%>
-    <%--                    <c:import url="/WEB-INF/jsp/admin/menu.jsp" charEncoding="utf-8"/>--%>
-    <%--                </c:when>--%>
-    <%--                <c:when test="${userAuthorization and sessionScope.userType eq \"READER\"}">--%>
-    <%--                    <c:import url="/WEB-INF/jsp/reader/menu.jsp" charEncoding="utf-8"/>--%>
-    <%--                </c:when>--%>
-    <%--                <c:otherwise>--%>
-    <%--                    <c:import url="/WEB-INF/jsp/guest/menu.jsp" charEncoding="utf-8"/>--%>
-    <%--                </c:otherwise>--%>
-    <%--            </c:choose>--%>
-    <%--        </div>--%>
-    <%--        <div class="middle-context">--%>
-    <%--            <!--menu top-->--%>
-    <%--            <c:if test="${not empty requestScope.pageMenu}">--%>
-    <%--                <div class="middle-context-menu-top"><c:import url="${requestScope.pageMenu}" charEncoding="utf-8"/></div>--%>
-    <%--            </c:if>--%>
-    <%--            <!--content-->--%>
-    <%--            <c:if test="${not empty requestScope.page}">--%>
-    <%--                <div class="middle-context-data"><c:import url="${requestScope.page}" charEncoding="utf-8"/></div>--%>
-    <%--            </c:if>--%>
-    <%--        </div>--%>
-    <%--    </div>--%>
     <div class="context footer">
         <c:import url="common/footer.jsp" charEncoding="utf-8"/>
     </div>

@@ -15,4 +15,9 @@ public class ReaderDispatcher {
         return "main";
     }
 
+    @GetMapping("/subscriptions")
+    public String subscriptions() {
+        return "";
+    }
+
 }

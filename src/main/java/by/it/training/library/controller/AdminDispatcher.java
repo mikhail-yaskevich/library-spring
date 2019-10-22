@@ -15,4 +15,13 @@ public class AdminDispatcher {
         return "main";
     }
 
+    @GetMapping("readers")
+    public String readers() {
+        return "";
+    }
+
+    @GetMapping("/subscriptions")
+    public String subscriptions() {
+        return "";
+    }
 }

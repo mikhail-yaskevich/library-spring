@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <div align="center">
-    <form action="main" method="post">
+    <form action="login_check" method="post">
         <input type="hidden" name="command" value="login"/>
         <table>
             <tr>

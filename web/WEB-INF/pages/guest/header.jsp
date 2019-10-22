@@ -1,8 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%--<div class="header-logo">--%>
-    <a href=""><img class="header-logo" src="resources/img/logo.ico"/></a>
+    <a href="<c:url value="/"/>"><img class="header-logo" src="resources/img/logo.ico"/></a>
 <%--</div>--%>
 <div class="header-user">
     <a href="login"><fmt:message bundle="${requestScope.language}" key="main.enter"/></a>

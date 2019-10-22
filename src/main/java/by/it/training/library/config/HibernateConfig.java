@@ -29,20 +29,16 @@ public class HibernateConfig implements TransactionManagementConfigurer {
 
     @Bean
     public LocalSessionFactoryBean getSessionFactory() {
-        System.out.println("getSessionFactory: ???");
         LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
         sessionFactoryBean.setConfigLocation(context.getResource("classpath:hibernate.cfg.xml"));
         sessionFactoryBean.setPackagesToScan("by.it.training.library.entity");
-        System.out.println("getSessionFactory: yes");
         return sessionFactoryBean;
     }
 
     @Override
     public PlatformTransactionManager annotationDrivenTransactionManager() {
-        System.out.println("annotationDrivenTransactionManager: ???");
         HibernateTransactionManager transactionManager = new HibernateTransactionManager();
         transactionManager.setSessionFactory(getSessionFactory().getObject());
-        System.out.println("annotationDrivenTransactionManager: yes");
         return transactionManager;
     }
 }

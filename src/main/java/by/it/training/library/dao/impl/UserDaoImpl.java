@@ -33,9 +33,11 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
-    @Transactional
+    ////@Transactional
     @Override
     public void registration(User user) {
+        System.out.println("dao.registration");
         sessionFactory.openSession().save(user);
+        System.out.println("dao.registration: yes");
     }
 }
